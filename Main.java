@@ -1,14 +1,10 @@
-
-// Абстрактный базовый класс
 abstract class GeometricFigure {
     private String name;
     private String color;
     private double volume;
 
-    // Статический счётчик созданных объектов
     protected static int objectCount = 0;
 
-    // Конструктор по умолчанию
     public GeometricFigure() {
         this.name = "Неизвестная фигура";
         this.color = "Белый";
@@ -16,18 +12,15 @@ abstract class GeometricFigure {
         objectCount++;
     }
 
-    // Конструктор с параметрами
     public GeometricFigure(String name, String color) {
         this.name = name;
         this.color = color;
         objectCount++;
     }
 
-    // Абстрактные методы
     public abstract double calculateVolume();
     public abstract void displayInfo();
 
-    // Геттеры и сеттеры
     public String getName() {
         return name;
     }
@@ -57,7 +50,6 @@ abstract class GeometricFigure {
     }
 }
 
-// Класс Шар
 class Sphere extends GeometricFigure {
     private double radius;
 
@@ -93,7 +85,6 @@ class Sphere extends GeometricFigure {
     }
 }
 
-// Класс Параллелепипед
 class Parallelepiped extends GeometricFigure {
     private double length;
     private double width;
@@ -127,7 +118,6 @@ class Parallelepiped extends GeometricFigure {
     }
 }
 
-// Класс Цилиндр
 class Cylinder extends GeometricFigure {
     private double radius;
     private double height;
@@ -158,7 +148,6 @@ class Cylinder extends GeometricFigure {
     }
 }
 
-// Демонстрация работы
 public class Main {
     public static void main(String[] args) {
         GeometricFigure sphere = new Sphere("Красный", 3.5);
